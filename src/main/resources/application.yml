@@ -1,0 +1,20 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: gateway
+zuul:
+  routes:
+    cliente:
+      path: /cliente/**
+      serviceId: cliente
+    produto:
+      path: /produto/**
+      serviceId: produto
+    aplicacao:
+      path: /aplicacao/**
+      serviceId: aplicacao
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
